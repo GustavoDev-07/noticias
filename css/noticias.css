@@ -1,14 +1,21 @@
 
 :root {
-    --primary-color: #66c9fab1;
-    --secondary-color: #f76565;
-    --tertiary-color: #013f6af4;
-    --text-color: #000951;
+    --primary-color: #013f6af4;
+    --secondary-color: #810202;
+    --tertiary-color: #66c9fab1;
+    --text-color: #f9fafc;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.escuro {
+    --primary-color: #66c9fab1;
+    --secondary-color: #f76565;
+    --tertiary-color: #013f6af4;
+    --text-color: #000951;
 }
 
 body {
@@ -28,6 +35,34 @@ header {
     background-color: var(--primary-color);
 }
 
+.botao_tema {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    padding: 1vh;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header button:hover {
+    padding: 1.0002vw;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+header button:active {
+    border: 2px solid var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
 header img {
     width: 20vw;
 }
@@ -45,7 +80,7 @@ header h1 {
 }
 
 .noticia {
-    width: 30%;
+    width: 300px;
     padding: 15px;
     border: 3px solid var(--text-color);
     background-color: var(--primary-color);
@@ -58,3 +93,4 @@ header h1 {
     text-align: center;
     margin-bottom: 10px;
 }
+
