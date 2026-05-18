@@ -8,7 +8,7 @@
     <script src="/js/noticias.js"></script>
     <title>Notícias</title>
 </head>
-<body class="claro">
+<body class="claro" onload="exibir_noticias()">
     <header>
         <button class="botao_tema" onclick="alterar_tema()">Tema</button>
         <img src="/img/images.png" alt="noticias">
@@ -16,38 +16,7 @@
     </header>
     <nav></nav>
     <main>
-        <section class="noticias">
-            <article class="noticia">
-                <img src="/img/noticias.png" onclick="abrirLightbox(this)" alt="">
-                <h2>Notícia 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam nostrum quos rem. Esse, similique.</p>
-                <a href="#">Leia mais...</a>
-            </article>
-            <article class="noticia">
-                <img src="/img/noticias.png" onclick="abrirLightbox(this)" alt="">
-                <h2>Notícia 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam nostrum quos rem. Esse, similique.</p>
-                <a href="#">Leia mais...</a>
-            </article>
-            <article class="noticia">
-                <img src="/img/noticias.png" onclick="abrirLightbox(this)" alt="">
-                <h2>Notícia 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam nostrum quos rem. Esse, similique.</p>
-                <a href="#">Leia mais...</a>
-            </article>
-            <article class="noticia">
-                <img src="/img/noticias.png" onclick="abrirLightbox(this)" alt="">
-                <h2>Notícia 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam nostrum quos rem. Esse, similique.</p>
-                <a href="#">Leia mais...</a>
-            </article>
-            <article class="noticia">
-                <img src="/img/noticias.png" onclick="abrirLightbox(this)" alt="">
-                <h2>Notícia 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat numquam nostrum quos rem. Esse, similique.</p>
-                <a href="#">Leia mais...</a>
-            </article>
-        </section>
+        <section class="noticias" id="noticias">        </section>
         <div id="lightbox" class="lightbox" onclick="fecharLightbox()">
             <span class="fechar">&times;</span>
             <img class="lightbox-img" id="lightbox-img" src="">
