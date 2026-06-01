@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/ico/news.ico">
-    <link rel="stylesheet" href="/css/noticias.css">
-    <script src="/js/noticias.js"></script>
+    <link rel="shortcut icon" href="../ico/news.ico">
+    <link rel="stylesheet" href="../css/noticias.css">
+    <script src="../js/noticias.js"></script>
     <title>Notícias</title>
 </head>
 <body class="claro" onload="exibir_noticias()">
     <header>
         <button class="botao_tema" onclick="alterar_tema()">Tema</button>
-        <img src="/img/images.png" onclick="abrir_lightbox()"alt="noticias">
+        <img src="../img/images.png" onclick="abrir_lightbox()"alt="noticias">
         <h1>Notícias Web</h1>
     </header>
-    <nav></nav>
+    <nav class="menu_principal">
+        <a href="noticias.html" class="link_menu">Feed de Notícias</a>
+        <a href="formulario.html" class="link_menu">Nova Notícia</a>
+    </nav>
     <main>
         <section class="noticias" id="noticias">        </section>
         <div id="lightbox" class="lightbox" onclick="fecharLightbox()">

@@ -1,0 +1,141 @@
+/* Estilo do link de navegação */
+.link_voltar {
+    display: inline-block;
+    margin: 15px 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--text-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+}
+
+.link_voltar:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Container do Formulário */
+.cadastro_container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 25px;
+    border: 3px solid var(--text-color);
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Divs de agrupamento */
+.grupo_campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo_campo label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Inputs e Textarea estruturados */
+.grupo_campo input, 
+.grupo_campo textarea {
+    padding: 12px;
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Placeholder legível em ambos os temas */
+.grupo_campo input::placeholder,
+.grupo_campo textarea::placeholder {
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.grupo_campo input:focus, 
+.grupo_campo textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+/* Botão de Envio do Formulário */
+.botao_enviar {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.botao_enviar:hover {
+    border-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.botao_enviar:active {
+    border-color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+/* ==================== MENU DE NAVEGAÇÃO ==================== */
+.menu_principal {
+    margin: 15px 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.link_menu {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 25px;
+    min-width: 160px;
+    
+    /* Cores baseadas nas variáveis originais */
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: 3px solid var(--text-color);
+    border-radius: 10px;
+    
+    /* Suaviza a transição de cor no hover */
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.link_menu:hover {
+    background-color: var(--tertiary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+/* Efeito ao clicar (Active) */
+.link_menu:active {
+    background-color: var(--secondary-color);
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+/* Ajuste de responsividade para telas menores */
+@media (max-width: 480px) {
+    .menu_principal {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .link_menu {
+        width: 100%;
+    }
+}

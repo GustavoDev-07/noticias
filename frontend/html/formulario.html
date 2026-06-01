@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../ico/news.ico">
+    <link rel="stylesheet" href="../css/noticias.css">
+    <link rel="stylesheet" href="../css/formulario.css">
+    <script src="../js/formulario.js"></script>
+    <title>Cadastrar Notícia</title>
+</head>
+<body class="claro">
+    <header>
+        <button class="botao_tema" onclick="alterar_tema()">Tema</button>
+        <img src="../img/images.png" alt="noticias">
+        <h1>Cadastro de Notícias</h1>
+    </header>
+
+    <nav class="menu_principal">
+        <a href="noticias.html" class="link_menu">Feed de Notícias</a>
+        <a href="formulario.html" class="link_menu">Nova Notícia</a>
+    </nav>
+
+    <main>
+        <section class="cadastro_container">
+            <form id="form_noticia" onsubmit="cadastrar_noticia(event)">
+                <div class="grupo_campo">
+                    <label for="titulo">Título da Notícia</label>
+                    <input type="text" id="titulo" placeholder="Digite o título..." required>
+                </div>
+
+                <div class="grupo_campo">
+                    <label for="caminhoImagem">Caminho da Imagem (URL ou local)</label>
+                    <input type="text" id="caminhoImagem" placeholder="../img/sua-imagem.png ou link web..." required>
+                </div>
+
+                <div class="grupo_campo">
+                    <label for="link">Link de Origem (Leia mais)</label>
+                    <input type="text" id="link" placeholder="https://..." required>
+                </div>
+
+                <div class="grupo_campo">
+                    <label for="conteudo">Conteúdo da Notícia</label>
+                    <textarea id="conteudo" rows="6" placeholder="Escreva o corpo da notícia aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="botao_enviar">Publicar Notícia</button>
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+</html>

@@ -72,6 +72,57 @@ header h1 {
     color: var(--text-color);
 }
 
+/* ==================== MENU DE NAVEGAÇÃO ==================== */
+.menu_principal {
+    margin: 15px 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.link_menu {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 25px;
+    min-width: 160px;
+    
+    /* Cores baseadas nas variáveis originais */
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: 3px solid var(--text-color);
+    border-radius: 10px;
+    
+    /* Suaviza a transição de cor no hover */
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.link_menu:hover {
+    background-color: var(--tertiary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+/* Efeito ao clicar (Active) */
+.link_menu:active {
+    background-color: var(--secondary-color);
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+/* Ajuste de responsividade para telas menores */
+@media (max-width: 480px) {
+    .menu_principal {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .link_menu {
+        width: 100%;
+    }
+}
+
 .noticias {
     margin: 15px 10px;
     display: flex;

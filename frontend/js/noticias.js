@@ -23,46 +23,29 @@ function fecharLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
 
-function exibir_noticias(){
-    const section = document.getElementById("noticias")
+async function exibir_noticias(){
+    const section = document.getElementById("noticias");
+    section.innerHTML = "<h2>Aguarde, carregando documento...</h2>"
 
-    var noticias = [
-        {
-            imagem: "../img/sla.png",
-            titulo: "Estratégias em um Novo Paradigma Globalizado",
-            descricao: "Podemos já vislumbrar o modo pelo qual a estruturação de redes de cooperação intersetorial estende o alcance e a importância do sistema de participação geral. Do mesmo modo, a execução dos pontos do programa possibilita uma melhor visão global dos relacionamentos verticais entre as hierarquias. Considerando as lições aprendidas, a competitividade nas transações comerciais apresenta tendências no sentido de aprovar a manutenção dos métodos utilizados na avaliação de resultados. Do ponto de vista estrutural, a necessidade de renovação processual converge para práticas mais resolutivas dos processos que moldam a realidade institucional.",
-            link: "../html/noticia.html"
-        },
-        {
-            imagem: "../img/glob.png",
-            titulo: "Estratégias em um Novo Paradigma Globalizado",
-            descricao: "Por outro lado, o julgamento imparcial das eventualidades agrega valor ao estabelecimento do processo de comunicação como um todo. À medida que avançamos, a integração das tecnologias emergentes assume importantes posições no estabelecimento das direções preferenciais no sentido do progresso. Acima de tudo, é fundamental ressaltar que a constante divulgação das informações causa impacto indireto na reavaliação das condições inegavelmente apropriadas. Desta maneira, a gestão eficiente dos recursos estratégicos ainda não demonstrou convincentemente que vai participar na mudança de todos os recursos funcionais envolvidos.",
-            link: "../html/noticia.html"
-        },
-        {
-            imagem: "../img/johnny.png",
-            titulo: "Johnny",
-            descricao: "Acima de tudo, é fundamental ressaltar que a consolidação de novos paradigmas operacionais incorpora valores fundamentais à transformação das condições inegavelmente apropriadas. Sob essa perspectiva, a adoção de políticas descentralizadoras auxilia a preparação e a composição das condições financeiras e administrativas exigidas. Por intermédio de análises qualificadas, o desenvolvimento contínuo de distintas formas de atuação reforça a necessidade de ajustes dinâmicos dos processos que moldam a realidade institucional. Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se a expansão dos mercados mundiais agrega valor ao estabelecimento da fluidez dos cenários contemporâneos.",
-            link: "../html/noticia.html"
-        },
-                {
-            imagem: "../img/bambe.png",
-            titulo: "Bambe",
-            descricao: "A partir de reflexões estratégicas, a contínua expansão de nossa atividade estende o alcance e a importância das diversas correntes de pensamento. Todavia, a utilização racional de ativos intangíveis causa impacto indireto na reavaliação da inteligência coletiva mobilizada. É claro que o comprometimento entre as equipes incorpora valores fundamentais à transformação dos conhecimentos estratégicos para atingir a excelência. Do ponto de vista estrutural, o acompanhamento das preferências de consumo assume importantes posições no estabelecimento dos contextos operacionais cada vez mais complexos. O empenho em analisar o desafiador cenário globalizado maximiza as possibilidades por conta da lógica predominante nas decisões estratégicas.",
-            link: "../html/noticia.html"
+    try {
+        const resposta = await fetch('http://127.0.0.1:3000/noticias');
+        var noticias = await resposta.json();
+
+        var html = "";
+        noticias.forEach(noticia => {
+            html += `
+                <article class="noticia">
+                    <img src="${noticia.caminhoImagem}" onclick="abrirLightbox(this)" alt="${noticia.titulo}">
+                    <h2>${noticia.titulo}</h2>
+                    <p>${noticia.conteudo}</p>
+                    <a href="${noticia.link}">Leia mais...</a>
+                </article>
+            `;
+        });
+
+        section.innerHTML = html;
         }
-    ];
-    var html = "";
-    noticias.forEach(noticia => {
-        html += `
-            <article class="noticia">
-                <img src="${noticia.imagem}" onclick="abrirLightbox(this)" alt="${noticia.titulo}">
-                <h2>${noticia.titulo}</h2>
-                <p>${noticia.descricao}</p>
-                <a href="${noticia.link}">Leia mais...</a>
-            </article>
-        `;
-    });
-
-    section.innerHTML = html;
+        catch(erro) {
+            section.innerHTML('<h2>Erro ao carregar notícias.</h2>');
+        }
 }
